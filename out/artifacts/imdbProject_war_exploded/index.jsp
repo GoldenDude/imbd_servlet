@@ -9,10 +9,15 @@
 <html>
 <%
   boolean logged = false;
+  boolean saved = false;
   User userName = new User();
   if(session.getAttribute("logged") != null){
     logged = (boolean) session.getAttribute("logged");
     userName = (User) session.getAttribute("user");
+  }
+
+  if(request.getParameter("saved") != null){
+    saved = (boolean) request.getAttribute("saved");
   }
 
   if(!logged){
@@ -97,6 +102,13 @@
               %>
             </select>
           </div>
+          <%
+            if(!saved){
+          %>
+          <label class="loginError">Failed to save answers. Please try again!</label>
+          <%
+            }
+          %>
 
           <div class="container-login100-form-btn m-t-20">
             <input type="submit" class="login100-form-btn" value="Send Answers!"/>
