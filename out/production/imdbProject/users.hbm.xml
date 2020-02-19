@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.azranozeri.usermanagement.models.User" table="users">
+        <id name="userName">
+            <column name="user_name"/>
+        </id>
+        <property name="passwordHash">
+            <column name="password_hash"/>
+        </property>
+        <property name="email">
+            <column name="email"/>
+        </property>
+    </class>
+</hibernate-mapping>

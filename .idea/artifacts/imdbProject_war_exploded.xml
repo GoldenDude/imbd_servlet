@@ -1,0 +1,21 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="imdbProject:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/imdbProject_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="imdbProject/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="imdbProject" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Hibernate 5.4.9-5.4.9" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar" />
+          <element id="library" level="project" name="junit-4.12" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/gson-2.8.6.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/httpclient-4.3-beta1.jar" />
+          <element id="file-copy" path="$USER_HOME$/Downloads/httpcore-4.4.13.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
