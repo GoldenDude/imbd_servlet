@@ -17,7 +17,7 @@
   }
 
   if(request.getParameter("saved") != null){
-    saved = (boolean) request.getAttribute("saved");
+    saved = !(boolean) request.getAttribute("saved");
   }
 
   if(!logged){
@@ -103,7 +103,7 @@
             </select>
           </div>
           <%
-            if(!saved){
+            if(saved){
           %>
           <label class="loginError">Failed to save answers. Please try again!</label>
           <%
