@@ -29,9 +29,11 @@
 </head>
 <body>
     <div class="limiterVisual">
-        <span class="login100-form-title p-b-33">You thought the highest average rating movies have a budget of <b><%=answer1%> million USD</b></span>
-        <span class="login100-form-title p-b-33">You thought the highest average rating movies are <b><%=answer2%></b> minutes long</span>
-        <span class="login100-form-title p-b-33">You thought the highest average rating movies were released in <b><%=answer3%></b></span>
+        <div class="answerHolder">
+            <span class="login100-form-title p-b-33">You thought the highest average rating movies have a budget of <b><%=answer1%></b>million USD.</span>
+            <span class="login100-form-title p-b-33">You thought the highest average rating movies are <b><%=answer2%></b> minutes long.</span>
+            <span class="login100-form-title p-b-33">You thought the highest average rating movies were released in <b><%=answer3%></b>.</span>
+        </div>
         <div class='tableauPlaceholder' id='viz1582612676047' style='position: relative'>
             <noscript><a href='#'><img alt=' '
                                        src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;M3&#47;M3D7JMHMB&#47;1_rss.png'

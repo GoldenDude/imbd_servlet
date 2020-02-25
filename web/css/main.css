@@ -206,6 +206,11 @@ iframe {
   width: 100%;
 }
 
+.answerHolder{
+  padding-top: 70px;
+  padding-bottom: 35px;
+}
+
 .login100-form-title {
   display: block;
   font-family: OpenSans-Regular;

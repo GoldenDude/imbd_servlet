@@ -16,6 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 
+/**
+ * A microservice that saves user's answer to a nosql database (MongoDB)
+ * It sends a request to an existing server written in node.js that is deployed on Heroku.
+ */
 public class saveAnswers extends HttpServlet {
     /**
      * @see javax.servlet.http.HttpServlet

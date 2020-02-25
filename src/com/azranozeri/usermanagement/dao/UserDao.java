@@ -1,10 +1,12 @@
 package com.azranozeri.usermanagement.dao;
 
+import java.util.Arrays;
 import java.util.List;
 
 import com.azranozeri.usermanagement.models.User;
 import com.azranozeri.usermanagement.util.HibernateUtil;
 import com.azranozeri.usermanagement.exceptions.UserDaoException;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -26,11 +28,11 @@ public class UserDao implements UserInterfaceDao {
             transaction = session.beginTransaction();
             session.save(user);
             transaction.commit();
-        } catch (Exception e) {
+        } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new UserDaoException("Unable to save user in the database");
+            throw new UserDaoException("Unable to save user in the database.\n" + Arrays.toString(e.getStackTrace()));
         }
     }
 
@@ -44,11 +46,11 @@ public class UserDao implements UserInterfaceDao {
             transaction = session.beginTransaction();
             session.update(user);
             transaction.commit();
-        } catch (Exception e) {
+        } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new UserDaoException("Unable to update user in the database");
+            throw new UserDaoException("Unable to update user in the database.\n" + Arrays.toString(e.getStackTrace()));
         }
     }
 
@@ -67,11 +69,11 @@ public class UserDao implements UserInterfaceDao {
                 System.out.println("user is deleted");
             }
             transaction.commit();
-        } catch (Exception e) {
+        } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new UserDaoException("Unable to delete user from the database");
+            throw new UserDaoException("Unable to delete user from the database.\n" + Arrays.toString(e.getStackTrace()));
         }
     }
 
@@ -88,11 +90,11 @@ public class UserDao implements UserInterfaceDao {
             transaction = session.beginTransaction();
             user = session.get(User.class, name);
             transaction.commit();
-        } catch (Exception e) {
+        } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new UserDaoException("Unable to get user from the database");
+            throw new UserDaoException("Unable to get user from the database.\n" + Arrays.toString(e.getStackTrace()));
         }
         return user;
     }
@@ -109,11 +111,11 @@ public class UserDao implements UserInterfaceDao {
             transaction = session.beginTransaction();
             listOfUser = session.createQuery("from User", User.class).getResultList();
             transaction.commit();
-        } catch (Exception e) {
+        } catch (HibernateException e) {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new UserDaoException("Unable to get all users from the database");
+            throw new UserDaoException("Unable to get all users from the database.\n" + Arrays.toString(e.getStackTrace()));
         }
 
         return listOfUser;
