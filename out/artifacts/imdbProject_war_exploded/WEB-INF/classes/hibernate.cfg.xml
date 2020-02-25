@@ -5,10 +5,10 @@
     <session-factory>
         <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
         <property name="hibernate.connection.url">
-            jdbc:mysql://localhost:3306/imdb_users?serverTimezone=UTC
+            jdbc:mysql://imdb.cisahvnfkkdo.us-east-1.rds.amazonaws.com:3306/users
         </property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
-        <property name="connection.username">edanyuval</property>
+        <property name="connection.username">root</property>
         <property name="connection.password">ghsi5490</property>
         <property name="show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>

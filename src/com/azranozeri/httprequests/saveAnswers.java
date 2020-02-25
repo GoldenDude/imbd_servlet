@@ -51,8 +51,10 @@ public class saveAnswers extends HttpServlet {
 
             if(json.get("result").getAsString().equals("Success")){
                 request.setAttribute("saved", true);
-                /* redirect to visualization */
-                System.out.println("saved!");
+                response.sendRedirect("visualData.jsp");
+                session.setAttribute("answer1", answer1);
+                session.setAttribute("answer2", answer2);
+                session.setAttribute("answer3", answer3);
             }
             else{
                 request.setAttribute("saved", false);
@@ -62,11 +64,17 @@ public class saveAnswers extends HttpServlet {
 
         }catch (Exception ex) {
             request.setAttribute("saved", false);
+            response.sendRedirect("index.jsp");
         } finally {
             httpClient.close();
         }
     }
 
+    /**
+     * Used to convert InputStream to String
+     * @param is - input stream
+     * @return string made from InputStream
+     */
     private String convertStreamToString(InputStream is) {
 
         BufferedReader reader = new BufferedReader(new InputStreamReader(is));

@@ -63,33 +63,41 @@
             Welcome <%=userName.getUserName()%>!
             </span>
           <span class="login100-form-title p-b-33">
-              Please answer the following questions:
+             Regarding movies' rating scores, in your opinion:
           </span>
           <label class="formLabel" for="rad1">Which budget has the highest rating average?</label>
           <div class="form-group" id="rad1">
             <div class="radio">
-              <label><input type="radio" name="answer1" value="50" checked>less than 50 Million USD</label>
+              <label><input type="radio" name="answer1" value="0-50" checked>less than 50 million USD</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="answer1" value="100">between 50 and 100 Million USD</label>
+              <label><input type="radio" name="answer1" value="50-100">between 50 and 100 million USD</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="answer1" value="200">Over 200 Million USD</label>
+              <label><input type="radio" name="answer1" value="100-200">between 100 and 200 million USD</label>
             </div>
+            <div class="radio">
+              <label><input type="radio" name="answer1" value="200+">Over 200 million USD</label>
+            </div>
+
           </div>
 
           <label class="formLabel" for="rad2">Which length has the highest rating average?</label>
           <div class="form-group" id="rad2">
             <div class="radio">
-              <label><input type="radio" name="answer2" value="50" checked>Less than 60 minutes</label>
+              <label><input type="radio" name="answer2" value="0-60" checked>Less than 60 minutes</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="answer2" value="120">between 60 and 120 minutes</label>
+              <label><input type="radio" name="answer2" value="60-120">between 60 and 120 minutes</label>
             </div>
             <div class="radio">
-              <label><input type="radio" name="answer2" value="180">between 120 and 180 minutes</label>
+              <label><input type="radio" name="answer2" value="120-180">between 120 and 180 minutes</label>
+            </div>
+            <div class="radio">
+              <label><input type="radio" name="answer2" value="180+">Over 180 minutes</label>
             </div>
           </div>
+
           <div class="form-group">
             <label class="formLabel" for="sel1">Which year has the highest movies rating average?</label>
             <select class="editedFormControl" id="sel1" name="answer3">

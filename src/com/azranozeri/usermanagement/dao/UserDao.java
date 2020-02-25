@@ -20,7 +20,7 @@ public class UserDao implements UserInterfaceDao {
      * Save User
      * @param user - user to be added to the database
      */
-    public void saveUser(User user) {
+    public void saveUser(User user) throws UserDaoException {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
@@ -38,7 +38,7 @@ public class UserDao implements UserInterfaceDao {
      * Update User
      * @param user - user that will be updated with new data.
      */
-    public void updateUser(User user) {
+    public void updateUser(User user) throws UserDaoException {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
@@ -56,7 +56,7 @@ public class UserDao implements UserInterfaceDao {
      * Delete User
      * @param name - The name of the user that needs to be deleted
      */
-    public void deleteUser(String name) {
+    public void deleteUser(String name) throws UserDaoException {
 
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
@@ -80,7 +80,7 @@ public class UserDao implements UserInterfaceDao {
      * @param name - The name of the user that needs to be returned
      * @return - requested user instance
      */
-    public User getUser(String name) {
+    public User getUser(String name) throws UserDaoException {
 
         Transaction transaction = null;
         User user = null;
@@ -101,7 +101,7 @@ public class UserDao implements UserInterfaceDao {
      * Get all Users
      * @return - list if all the users
      */
-    public List<User> getAllUser() {
+    public List<User> getAllUser() throws UserDaoException {
 
         Transaction transaction = null;
         List<User> listOfUser = null;

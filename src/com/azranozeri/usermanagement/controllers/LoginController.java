@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.azranozeri.usermanagement.exceptions.UserDaoException;
 import com.azranozeri.usermanagement.models.User;
 
 /**
@@ -39,7 +40,12 @@ public class LoginController extends AbstractUserController {
         RequestDispatcher dispatcher = request.getRequestDispatcher("/login.jsp");
 
         if(validate(userName, password)){
-            User user = userDao.getUser(userName);
+            User user = null;
+            try {
+                user = userDao.getUser(userName);
+            } catch (UserDaoException e) {
+                e.printStackTrace();
+            }
             session.setAttribute("user", user);
             session.setAttribute("logged", true);
             session.setAttribute("validation", true);
@@ -59,7 +65,13 @@ public class LoginController extends AbstractUserController {
      */
     private boolean validate(String userName, String password){
         String hashedPass = generateHash(password);
-        User user = userDao.getUser(userName);
+        User user = null;
+        try {
+            user = userDao.getUser(userName);
+        } catch (UserDaoException e) {
+            e.printStackTrace();
+            return false;
+        }
         if(user == null)
             return false;
 

@@ -133,6 +133,17 @@ iframe {
 .limiter {
   width: 100%;
   margin: 0 auto;
+  background: #e9faff;
+}
+
+.limiterVisual {
+  width: 100%;
+  margin: 0 auto;
+  background: #e9faff;
+}
+
+.tableauPlaceholder{
+  left: 20%;
 }
 
 .container-login100 {
@@ -198,10 +209,18 @@ iframe {
 .login100-form-title {
   display: block;
   font-family: OpenSans-Regular;
-  font-size: 21px;
+  font-size: 19px;
   color: #555555;
   line-height: 1.2;
   text-align: center;
+}
+
+.centerBubble {
+  padding-left: 350px;
+}
+
+.centerTree{
+  padding-left: 275px;
 }
 
 .wrap-question100 {
